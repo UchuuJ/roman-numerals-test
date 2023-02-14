@@ -11,6 +11,15 @@
 |
 */
 
+
+/**
+ * No need for a class here as we just want it to output our react frontend using the
+ * route.
+ *
+ * We're gunna have the form on the react frontend send a ajax request to the
+ * API route.
+ */
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('converter');
 });
