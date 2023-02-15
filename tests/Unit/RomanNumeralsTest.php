@@ -5,8 +5,9 @@ use App\Http\Helpers\ConvertLogicHelper;
 use Tests\TestCase;
 
 
-class TestRomanNumerals extends TestCase
+class RomanNumeralsTest extends TestCase
 {
+    /** @test **/
     public function ToIntegers(){
       $logic =  new ConvertLogicHelper();
 
@@ -27,23 +28,24 @@ class TestRomanNumerals extends TestCase
                                                                                                 $this->assertEquals(5,$logic->convertToInteger('V'));
     }
 
+    /** @test **/
     public function ToRomanNumerals(){
         $logic =  new ConvertLogicHelper();
 
         $this->assertEquals('I',$logic->convertToRomanNumerals(1));
-        $this->assertEquals('II',$logic->convertToInteger(2));
-        $this->assertEquals('III',$logic->convertToInteger(3));
-        $this->assertEquals('IV',$logic->convertToInteger(4));
-        $this->assertEquals('VI',$logic->convertToInteger(6));
-        $this->assertEquals('VII',$logic->convertToInteger(7));
-        $this->assertEquals('VIII',$logic->convertToInteger(8));
-        $this->assertEquals('IX',$logic->convertToInteger(9));
-        $this->assertEquals('X',$logic->convertToInteger(10));
-        $this->assertEquals('XX',$logic->convertToInteger(20));
-        $this->assertEquals('XXX',$logic->convertToInteger(30));
-        $this->assertEquals('XL',$logic->convertToInteger(40));
-        $this->assertEquals('L',$logic->convertToInteger(50));
-        $this->assertEquals('XCIXCMXCIX',$logic->convertToInteger(99999));
+        $this->assertEquals('II',$logic->convertToRomanNumerals(2));
+        $this->assertEquals('III',$logic->convertToRomanNumerals(3));
+        $this->assertEquals('IV',$logic->convertToRomanNumerals(4));
+        $this->assertEquals('VI',$logic->convertToRomanNumerals(6));
+        $this->assertEquals('VII',$logic->convertToRomanNumerals(7));
+        $this->assertEquals('VIII',$logic->convertToRomanNumerals(8));
+        $this->assertEquals('IX',$logic->convertToRomanNumerals(9));
+        $this->assertEquals('X',$logic->convertToRomanNumerals(10));
+        $this->assertEquals('XX',$logic->convertToRomanNumerals(20));
+        $this->assertEquals('XXX',$logic->convertToRomanNumerals(30));
+        $this->assertEquals('XL',$logic->convertToRomanNumerals(40));
+        $this->assertEquals('L',$logic->convertToRomanNumerals(50));
+        $this->assertEquals('XCIXCMXCIX',$logic->convertToRomanNumerals(99999));
     }
 
 }
