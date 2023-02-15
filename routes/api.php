@@ -1,5 +1,6 @@
 <?php
 
+
 use App\Http\Controllers\ConvertAjaxController;
 use Illuminate\Http\Request;
 
@@ -18,4 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('convert', ConvertAjaxController::class);
+
+Route::post('convert', [ConvertAjaxController::class, 'index']);

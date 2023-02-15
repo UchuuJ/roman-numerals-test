@@ -60,11 +60,11 @@ class ConvertLogicHelper {
          */
 
         if(!is_numeric($number)){
-            Throw new Exception("Please enter a number between 1 - 99999");
+            Throw new Exception("Please enter a number between 1 - 99999", 400);
         }
 
-        if($number >= 100000 && $number < 1){
-            Throw new Exception("Please enter a number between 1 - 99999");
+        if($number >= 100000 || $number < 1){
+            Throw new Exception("Please enter a number between 1 - 99999", 400);
         }
 
         $currentDivisable = 0;
@@ -124,7 +124,7 @@ class ConvertLogicHelper {
     public function convertToInteger(string $numerals) : Int {
 
         if(!$this->validateNumerals($numerals)){
-            Throw new Exception("Invalid Roman Numerals");
+            Throw new Exception("Invalid Roman Numerals", 400);
         }
 
         /**
@@ -206,7 +206,7 @@ class ConvertLogicHelper {
 
         //Check that we have a string of Letters
         if(is_numeric($numerals)){
-           Throw new Exception("Invalid Roman Numerals");
+           Throw new Exception("Invalid Roman Numerals", 400);
         }
         $numerals = strtoupper($numerals);
 
@@ -214,7 +214,7 @@ class ConvertLogicHelper {
         //Check that we have valid Roman Numeral characters
         for($i = 0; $i<strlen($numerals);$i++) {
             if (!in_array(substr($numerals,$i, 1), $this->_validNumerals)) {
-                Throw new Exception("Invalid Roman Numerals");
+                Throw new Exception("Invalid Roman Numerals", 400);
             }
         }
         return true;
