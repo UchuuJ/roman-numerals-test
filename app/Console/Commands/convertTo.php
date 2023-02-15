@@ -46,9 +46,9 @@ class convertTo extends Command
             $convertedValue = $convertLogic->convertToRomanNumerals($number);
             print PHP_EOL . "{$originalValue} converted to Roman Numeral is: {$convertedValue}" . PHP_EOL;
         } catch (\Exception $exception){
-            //Because this is the console I feel safe displaying the error and trace to the user.
+
             error_log("Error: {$exception->getMessage()} Trace:{$exception->getTraceAsString()}");
-            print "Error: {$exception->getMessage()} ".PHP_EOL." Trace:{$exception->getTraceAsString()}";
+            print "Error: {$exception->getMessage()} ".PHP_EOL;
             exit;
         }
     }

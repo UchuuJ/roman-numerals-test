@@ -16,15 +16,15 @@ This is code for the Roman Numeral Task for Swift Dental.
 The Following are required to install this application.
 
 - A POSIX system (Linux or Mac)
-- PHP 7.1+ (going to Test it on PHP 8 before I submit)
+- PHP 8.1 
 - NodeJS v18.14.0
-- composer
-- Laravel 6+ 
+- composer 2.20
+- Laravel 10 
 
 #### Installing 
 To install: 
 
-Downlaod Composer and make it an executable.
+Download Composer and make it an executable.
 
 
 ````
@@ -39,6 +39,12 @@ Download this repository and change directory to it.
 git clone https://github.com/UchuuJ/roman-numerals-test
 cd roman-numerals-test
 ````
+
+Create a .env file and add
+
+```
+APP_KEY=
+```
 
 Run composer install
 ```

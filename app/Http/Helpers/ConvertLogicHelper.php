@@ -54,11 +54,6 @@ class ConvertLogicHelper {
 
     public function convertToRomanNumerals(string $number) : string {
 
-        /**
-         * Check if the number is an integer or a decimal
-         * and if the number is bigger then 999
-         */
-
         if(!is_numeric($number)){
             Throw new Exception("Please enter a number between 1 - 99999", 400);
         }
@@ -206,7 +201,7 @@ class ConvertLogicHelper {
 
         //Check that we have a string of Letters
         if(is_numeric($numerals)){
-           Throw new Exception("Invalid Roman Numerals", 400);
+          return false;
         }
         $numerals = strtoupper($numerals);
 
@@ -214,7 +209,7 @@ class ConvertLogicHelper {
         //Check that we have valid Roman Numeral characters
         for($i = 0; $i<strlen($numerals);$i++) {
             if (!in_array(substr($numerals,$i, 1), $this->_validNumerals)) {
-                Throw new Exception("Invalid Roman Numerals", 400);
+                return false;
             }
         }
         return true;
