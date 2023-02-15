@@ -17,7 +17,10 @@ Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->describe('Display an inspiring quote');
 
-
-Artisan::command('convert', function () {
+/*
+Artisan::command('convert', function ($args) {
+    var_dump($args);
     $this->comment("THIS IS A TEST");
-})->describe('Display an inspiring quote');
+    //var_dump($this);
+})->describe('Convert To and from roman numerals ');
+*/
